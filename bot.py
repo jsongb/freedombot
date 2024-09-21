@@ -64,7 +64,7 @@ async def tower(channel_id):
 async def alchemy(channel_id):
     channel = bot.get_channel(channel_id)
     if channel:
-        await channel.send('''🧱🔥 **Já conferiu nossa alquimia? Confira os itens da alquimia no site https://grandfantasiafreedom.lovestoblog.com **
+        await channel.send('''🧱🔥 **Já conferiu nossa alquimia de hoje? Confira os itens da alquimia no site https://grandfantasiafreedom.lovestoblog.com **
         @everyone
         ''')
 

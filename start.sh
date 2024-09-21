@@ -1,3 +1,3 @@
-pip install -r requirements.txt 
+pip3 install -r requirements.txt 
 export DISCORD_TOKEN=""
-python bot.py
+python3 bot.py

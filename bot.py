@@ -69,7 +69,7 @@ async def alchemy(channel_id):
 async def restart(channel_id):
     channel = bot.get_channel(channel_id)
     if channel:
-        await channel.send('''🔧⚙️ **O servidor vai reiniciar para a manutenção diária em instantes, deslogue antes do restart para evitar inconsistencias. 🔧⚙️**
+        await channel.send('''🔧⚙️ **O servidor vai reiniciar para a manutenção diária em instantes, deslogue antes do restart para evitar inconsistencias.** 🔧⚙️
         @everyone
         ''')
 

@@ -32,8 +32,8 @@ async def on_ready():
     # 2	 0  restart
 
     # AGENDADOR DA TORRE 10h e 16h
-    scheduler.add_job(tower, CronTrigger(hour=10, minute=55), args=[announce_channel])
-    scheduler.add_job(tower, CronTrigger(hour=16, minute=55), args=[announce_channel])
+    scheduler.add_job(tower, CronTrigger(hour=13, minute=29), args=[announce_channel])
+    scheduler.add_job(tower, CronTrigger(hour=19, minute=29), args=[announce_channel])
 
     # AGENDADOR DA alquimia 18:30
     scheduler.add_job(alchemy, CronTrigger(hour=21, minute=30), args=[alchemy_channel])

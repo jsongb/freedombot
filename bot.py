@@ -32,19 +32,17 @@ async def on_ready():
     # 2	 0  restart
 
     # AGENDADOR DA TORRE 10h e 16h
-    scheduler.add_job(tower, CronTrigger(hour=12, minute=1), args=[announce_channel])
-    scheduler.add_job(tower, CronTrigger(hour=18, minute=1), args=[announce_channel])
+    scheduler.add_job(tower, CronTrigger(hour=9, minute=55), args=[announce_channel])
+    scheduler.add_job(tower, CronTrigger(hour=15, minute=55), args=[announce_channel])
 
-    # AGENDADOR DA alquimia
-    scheduler.add_job(alchemy, CronTrigger(hour=11, minute=30), args=[alchemy_channel])
-    # scheduler.add_job(alchemy, CronTrigger(hour=17, minute=30), args=[alchemy_channel])
-    scheduler.add_job(alchemy, CronTrigger(hour=23, minute=58), args=[alchemy_channel])
+    # AGENDADOR DA alquimia 18:30
+    scheduler.add_job(alchemy, CronTrigger(hour=21, minute=30), args=[alchemy_channel])
 
-    # AGENDADOR DO RESTART
+    # AGENDADOR DO RESTART 3:30
     scheduler.add_job(restart, CronTrigger(hour=6, minute=30), args=[announce_channel])
 
-    # AGENDADOR DO RESTART FINALIZADO
-    scheduler.add_job(restart_finished, CronTrigger(hour=6, minute=40), args=[announce_channel])
+    # AGENDADOR DO RESTART FINALIZADO 3:41
+    scheduler.add_job(restart_finished, CronTrigger(hour=6, minute=42), args=[announce_channel])
 
     scheduler.start()
 
@@ -52,7 +50,7 @@ async def on_ready():
 async def send_test_message(channel_id):
     channel = bot.get_channel(channel_id)
     if channel:
-        await channel.send("bip bop, im a bot, bip boop.")
+        await channel.send("bip boop, i am a robot, bip boop.")
 
 async def tower(channel_id):
     channel = bot.get_channel(channel_id)

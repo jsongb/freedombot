@@ -39,7 +39,7 @@ async def on_ready():
     scheduler.add_job(alchemy, CronTrigger(hour=21, minute=30), args=[alchemy_channel])
 
     # AGENDADOR DO RESTART 3:30
-    scheduler.add_job(restart, CronTrigger(hour=6, minute=30), args=[announce_channel])
+    scheduler.add_job(restart, CronTrigger(hour=5, minute=30), args=[announce_channel])
 
     # AGENDADOR DO RESTART FINALIZADO 3:41
     scheduler.add_job(restart_finished, CronTrigger(hour=6, minute=42), args=[announce_channel])

@@ -44,6 +44,12 @@ async def on_ready():
     # AGENDADOR DO RESTART FINALIZADO 3:41
     scheduler.add_job(restart_finished, CronTrigger(hour=6, minute=42), args=[announce_channel])
 
+    # new_auction_items 4h
+    scheduler.add_job(new_auction_items, CronTrigger(hour=7, minute=1), args=[announce_channel])
+
+    # new_auction_items 15h
+    scheduler.add_job(new_auction_items, CronTrigger(hour=17, minute=1), args=[announce_channel])
+
     scheduler.start()
 
 # Função para enviar a mensagem diária
@@ -78,6 +84,14 @@ async def restart_finished(channel_id):
     if channel:
         await channel.send('''**Servidor online✅. Aproveite!**
         "@everyone
+        ''')
+
+
+async def new_auction_items(channel_id):
+    channel = bot.get_channel(channel_id)
+    if channel:
+        await channel.send('''**Temos novos itens no leilão!!!**
+        @everyone
         ''')
 
 # Rodar o bot

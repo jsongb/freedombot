@@ -48,7 +48,7 @@ async def on_ready():
     scheduler.add_job(new_auction_items, CronTrigger(hour=7, minute=1), args=[announce_channel])
 
     # new_auction_items 15h
-    scheduler.add_job(new_auction_items, CronTrigger(hour=17, minute=1), args=[announce_channel])
+    # scheduler.add_job(new_auction_items, CronTrigger(hour=17, minute=1), args=[announce_channel])
 
     scheduler.start()
 
@@ -75,7 +75,7 @@ async def alchemy(channel_id):
 async def restart(channel_id):
     channel = bot.get_channel(channel_id)
     if channel:
-        await channel.send('''🔧⚙️ **O servidor vai reiniciar para a manutenção diária em instantes, deslogue antes do restart para evitar inconsistencias.** 🔧⚙️
+        await channel.send('''🔧⚙️ **O servidor vai reiniciar para a manutenção diária em instantes.** 🔧⚙️
         @everyone
         ''')
 

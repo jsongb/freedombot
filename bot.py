@@ -57,7 +57,7 @@ async def on_ready():
     scheduler.add_job(new_auction_items, CronTrigger(hour=19, minute=1), args=[announce_channel])
 
 
-    scheduler.add_job(gvg_msg, CronTrigger(hour=11, minute=55), args=[announce_channel])
+    scheduler.add_job(gvg_msg, CronTrigger(hour=11, minute=55, day_of_week="sun"), args=[announce_channel])
 
     scheduler.start()
 

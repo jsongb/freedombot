@@ -56,6 +56,9 @@ async def on_ready():
     # new_auction_items 15h
     scheduler.add_job(new_auction_items, CronTrigger(hour=19, minute=1), args=[announce_channel])
 
+
+    scheduler.add_job(gvg_msg, CronTrigger(hour=11, minute=55), args=[announce_channel])
+
     scheduler.start()
 
 # Função para enviar a mensagem diária
@@ -100,5 +103,11 @@ async def new_auction_items(channel_id):
         @everyone
         ''')
 
+async def gvg_msg(channel_id):
+    channel = bot.get_channel(channel_id)
+    if channel:
+        await channel.send('''**O GVG vai começar, preparem-se!!!**
+        @everyone
+        ''')
 # Rodar o bot
 bot.run(os.getenv('DISCORD_TOKEN'))  # Certifique-se de configurar a variável de ambiente DISCORD_TOKEN
